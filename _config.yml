@@ -1,0 +1,8 @@
+title: Laravel jsValidation
+description: Laravel 5 Javascript Validation
+google_analytics: UA-72687713-1
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
