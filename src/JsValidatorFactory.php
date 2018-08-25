@@ -119,13 +119,13 @@ class JsValidatorFactory
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    public function formRequest($formRequest, $selector = null)
+    public function formRequest($formRequest, $selector = null, $params = null)
     {
         if (! is_object($formRequest)) {
             $formRequest = $this->createFormRequest($formRequest);
         }
 
-        $rules = method_exists($formRequest, 'rules') ? $formRequest->rules() : [];
+        $rules = method_exists($formRequest, 'rules') ? $formRequest->rules($params) : [];
 
         $validator = $this->getValidatorInstance($rules, $formRequest->messages(), $formRequest->attributes());
 
